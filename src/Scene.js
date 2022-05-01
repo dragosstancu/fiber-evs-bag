@@ -104,7 +104,7 @@ export default function Scene() {
                     </PresentationControls> */}
                     <Bag scale={1} />
                     {/* <Bg /> */}
-                    <Cam position={[.2, 0, 0]} fov="50" />
+                    <Cam position={[.4, 0, 0]} fov="50" />
                     {/* <Box position={[0, 3, 0]} /> */}
                     <Text
                         color="#000"
