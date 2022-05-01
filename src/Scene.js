@@ -21,6 +21,50 @@ import Bag from './models/Bag';
 //     args: [50, 40, PROGRAMMER_BLUE, PROGRAMMER_GREEN]
 // };
 
+// Lights
+// function KeyLight({ brightness, color }) {
+//     return (
+//         <rectAreaLight
+//             width={3}
+//             height={3}
+//             color={color}
+//             intensity={brightness}
+//             position={[-2, 0, 5]}
+//             lookAt={[0, 0, 0]}
+//             penumbra={1}
+//             castShadow
+//         />
+//     );
+// }
+// function FillLight({ brightness, color }) {
+//     return (
+//         <rectAreaLight
+//             width={3}
+//             height={3}
+//             intensity={brightness}
+//             color={color}
+//             position={[2, 1, 4]}
+//             lookAt={[0, 0, 0]}
+//             penumbra={2}
+//             castShadow
+//         />
+//     );
+// }
+
+// function RimLight({ brightness, color }) {
+//     return (
+//         <rectAreaLight
+//             width={2}
+//             height={2}
+//             intensity={brightness}
+//             color={color}
+//             position={[1, 4, -2]}
+//             rotation={[0, 180, 0]}
+//             castShadow
+//         />
+//     );
+// }
+
 export default function Scene() {
     // const Curiosity = useGLTF('models/glb/curiosity.glb');
 
@@ -34,15 +78,20 @@ export default function Scene() {
                 <OrbitControls
                     makeDefault
                     autoRotate
-                    autoRotateSpeed={0.3}
+                    autoRotateSpeed={0.1}
                     // maxPolarAngle={Math.PI / 2.3}
                     // minPolarAngle={Math.PI / 2.3}
                     enableZoom={true}
                     enablePan={false}
                 />
                 <Suspense fallback={null}>
-                    <ambientLight intensity={0.5} />
-                    <spotLight color="#ffffff" intensity={1} position="{[10,10,10]}" decay="2"/>
+                    {/* <FillLight brightness={2.6} color={"#bdefff"} />
+                    <RimLight brightness={54} color={"#fff"} />
+                    <KeyLight brightness={5.6} color={"#ffc9f9"} /> */}
+                    <ambientLight intensity={.5}/>
+                    <pointLight intensity={.7} decay={1} position={[-1, 1, 1]} distance={0} />
+                    <pointLight intensity={.7} decay={1} position={[1, 1, 1]} distance={0}/>
+                    {/* <spotLight color="#ffffff" intensity={1} position="{[10,10,10]}" decay="2" /> */}
                     {/* <spotLight position={[10, 10, 10]} angle={0.15} shadow-mapSize={[2048, 2048]} castShadow /> */}
                     {/* <PresentationControls
                         global
@@ -53,9 +102,9 @@ export default function Scene() {
                         azimuth={[-Math.PI / 1.4, Math.PI / 2]}>
                         <Bag scale={30} />
                     </PresentationControls> */}
-                    <Bag scale={30} />
+                    <Bag scale={1} />
                     {/* <Bg /> */}
-                    <Cam position={[12, 0, 0]} fov="50" />
+                    <Cam position={[.2, 0, 0]} fov="50" />
                     {/* <Box position={[0, 3, 0]} /> */}
                     <Text
                         color="#000"
