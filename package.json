@@ -1,0 +1,39 @@
+{
+  "name": "three-fiber-lab",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "@react-three/drei": "^8.11.0",
+    "@react-three/fiber": "^7.0.26",
+    "install": "^0.13.0",
+    "npm": "^8.5.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^5.0.1",
+    "three": "^0.138.0",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
