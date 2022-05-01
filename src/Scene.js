@@ -3,7 +3,7 @@ import { Canvas } from '@react-three/fiber';
 import { Loader, OrbitControls } from '@react-three/drei';
 
 // import Box from './components/Box';
-import Cam from './components/Cam';
+import Camera from './components/Camera';
 import Text from './components/Text';
 // import Bg from './components/Bg';
 // import Info from './components/Info';
@@ -79,18 +79,22 @@ export default function Scene() {
                     makeDefault
                     autoRotate
                     autoRotateSpeed={0.1}
-                    // maxPolarAngle={Math.PI / 2.3}
-                    // minPolarAngle={Math.PI / 2.3}
+                    // maxAzimuthAngle={Math.PI / 4}
+                    // maxPolarAngle={Math.PI}
+                    // minAzimuthAngle={-Math.PI / 4}
+                    // minPolarAngle={0}
                     enableZoom={true}
                     enablePan={false}
+                    enableDamping={true}
+                    // dampingFactor={.5}
                 />
                 <Suspense fallback={null}>
                     {/* <FillLight brightness={2.6} color={"#bdefff"} />
                     <RimLight brightness={54} color={"#fff"} />
                     <KeyLight brightness={5.6} color={"#ffc9f9"} /> */}
-                    <ambientLight intensity={.5}/>
-                    <pointLight intensity={.7} decay={1} position={[-1, 1, 1]} distance={0} />
-                    <pointLight intensity={.7} decay={1} position={[1, 1, 1]} distance={0}/>
+                    <ambientLight intensity={.3} />
+                    <pointLight intensity={.8} decay={1} position={[-1, 1, 1]} distance={0} />
+                    <pointLight intensity={.8} decay={1} position={[1, 1, 1]} distance={0} />
                     {/* <spotLight color="#ffffff" intensity={1} position="{[10,10,10]}" decay="2" /> */}
                     {/* <spotLight position={[10, 10, 10]} angle={0.15} shadow-mapSize={[2048, 2048]} castShadow /> */}
                     {/* <PresentationControls
@@ -104,13 +108,22 @@ export default function Scene() {
                     </PresentationControls> */}
                     <Bag scale={1} />
                     {/* <Bg /> */}
-                    <Cam position={[.4, 0, 0]} fov="50" />
+                    <Camera position={[.4, 0, 0]} fov="50" />
                     {/* <Box position={[0, 3, 0]} /> */}
                     <Text
-                        color="#000"
-                        fontSize="1"
+                        color="#444"
                         // _onClick={() => window.open(_GH_REPO)}
-                        position={[0, 1, -10]}
+                        position={[-10, 0, 0]}
+                        anchorX="center"
+                        fontSize={1}
+                        maxWidth={200}
+                        lineHeight={1}
+                        letterSpacing={0.02}
+                        anchorY="middle"
+                        fillOpacity={0.1}
+                        strokeWidth={'1%'}
+                        strokeColor="#444"
+                        rotation={[0, Math.PI / 2, 0]}
                     >
                         ElleVet Hemp CBD + CBDA Chews
                     </Text>

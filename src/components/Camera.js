@@ -15,7 +15,7 @@ export default function Cam(props) {
     } = props;
     return (
         <>
-            <PerspectiveCamera makeDefault position={position} />
+            <PerspectiveCamera makeDefault position={position} near={.1} far={20} />
             {orbit && <OrbitControls
                 autoRotate={autoRotate}
                 autoRotateSpeed={autoRotateSpeed}
@@ -27,8 +27,8 @@ export default function Cam(props) {
             // onTarget={ return current camera target (e.g. from orbit controls) to center animation }
             >
                 <AxisGizmoViewport
-                    axisColors={['red', 'green', 'blue']}
-                    labelColor={'black'}
+                    axisColors={['#666', '#666', '#666']}
+                    labelColor={'#fff'}
                 />
             </AxisGizmoHelper>
         </>
