@@ -79,10 +79,11 @@ export default function Scene() {
                     makeDefault
                     autoRotate
                     autoRotateSpeed={0.1}
-                    // maxAzimuthAngle={Math.PI / 4}
-                    maxPolarAngle={2*Math.PI/3}
+                    maxPolarAngle={3 * Math.PI / 5}
+                    // maxAzimuthAngle={3*Math.PI / 5}
+                    // maxPolarAngle={3*Math.PI/4}
                     // minAzimuthAngle={-Math.PI / 4}
-                    minPolarAngle={Math.PI/3}
+                    minPolarAngle={2*Math.PI / 5}
                     enableZoom={true}
                     enablePan={false}
                     enableDamping={true}
@@ -110,7 +111,7 @@ export default function Scene() {
                     </PresentationControls> */}
                     <Bag scale={1} />
                     {/* <Bg /> */}
-                    <Camera position={[1, 0, 0]} fov="50" />
+                    <Camera position={[5, 0, 0]} fov="50" />
                     {/* <Box position={[0, 3, 0]} /> */}
                     <Text
                         color="#444"
